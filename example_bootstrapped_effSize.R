@@ -7,8 +7,8 @@ treatment1 <- runif(30, min = 3, max = 6) #fake data that won't be different tha
 treatment2 <- runif(30, min = 4, max = 6) #fake data that will be different than control
 
 #First calculate Hedges' G (unbiased Cohen's D)
-effSize1 <- Cohens.d(treatment1, control)
-effSize2 <- Cohens.d(treatment2, control)
+effSize1 <- Unbiased.d(treatment1, control)
+effSize2 <- Unbiased.d(treatment2, control)
 
 #Calculate a 95% CI for the effect size, 1000 samples
 effSizeCI1 <- bootstrapDCI(treatment1, control, B = 1000, alpha = 0.05)
